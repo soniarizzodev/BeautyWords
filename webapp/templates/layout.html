@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - The easiest typography generator</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+
+</head>
+
+<body>    
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <hr />
+        <footer>
+            <p>&copy; {{ year }} - My Flask Application</p>
+        </footer>
+    </div>
+    <script type="text/javascript" src="/static/scripts/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript" src="/static/content/bootstrap/bootstrap.min.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>
