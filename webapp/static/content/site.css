@@ -1,3 +1,7 @@
+:root{
+    --font-size:4rem;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -16,27 +20,74 @@ textarea {
     max-width: 280px;
 }
 
-/* styles for validation helpers */
-.field-validation-error {
-    color: #b94a48;
+.canvas{
+    height:70vh;
+    font-size:var(--font-size);
+    border:1px solid #d8d8d8;
+    border-radius:3px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;    
 }
 
-.field-validation-valid {
-    display: none;
+.canvas p{
+   margin:0;
+   line-height:calc(var(--font-size) / 3 * 2.5);   
+   opacity:0.9;
 }
 
-input.input-validation-error {
-    border: 1px solid #b94a48;
+/*Fonts*/
+@font-face {
+    font-family: "Lobster";
+    src: url(../fonts/Lobster-Regular.ttf);
 }
 
-input[type="checkbox"].input-validation-error {
-    border: 0 none;
+@font-face {
+    font-family: "LobsterTwo";
+    src: url(../fonts/LobsterTwo-Regular.ttf);
 }
 
-.validation-summary-errors {
-    color: #b94a48;
+@font-face {
+    font-family: "DancingScript";
+    src: url(../fonts/DancingScript-Regular.ttf);
 }
 
-.validation-summary-valid {
-    display: none;
+@font-face {
+    font-family: "PermanentMarker";
+    src: url(../fonts/PermanentMarker-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Satisfy";
+    src: url(../fonts/Satisfy-Regular.ttf);
+}
+
+@font-face {
+    font-family: "SpecialElite";
+    src: url(../fonts/SpecialElite-Regular.ttf);
+}
+
+.Lobster {
+    font-family: "Lobster";
+}
+
+.LobsterTwo {
+    font-family: "LobsterTwo";
+}
+
+.DancingScript {
+    font-family: "DancingScript";
+}
+
+.PermanentMarker {
+    font-family: "PermanentMarker";
+}
+
+.Satisfy {
+    font-family: "Satisfy";
+}
+
+.SpecialElite {
+    font-family: "SpecialElite";
 }

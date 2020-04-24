@@ -10,7 +10,7 @@
 
 </head>
 
-<body>    
+<body>
     <div class="container body-content">
         {% block content %}{% endblock %}
         <hr />
@@ -20,6 +20,12 @@
     </div>
     <script type="text/javascript" src="/static/scripts/jquery-3.5.0.min.js"></script>
     <script type="text/javascript" src="/static/content/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/scripts/knockout-3.5.1.debug.js"></script>
+    <script type="text/javascript" src="/static/scripts/viewmodels.js"></script>
+    <script>
+        window["app"] = new App();
+        ko.applyBindings(app, document.body);
+    </script>
     {% block scripts %}{% endblock %}
 
 </body>
