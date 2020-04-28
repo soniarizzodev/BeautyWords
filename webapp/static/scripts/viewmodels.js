@@ -3,17 +3,49 @@ var host = location.protocol + '//' + location.hostname + (location.port ? ':' +
 
 function App() {
     let _self = this;
-    this.Words = ko.observableArray([]);
+    this.SplitSentence = ko.observableArray([]);
+    this.InputSentence = ko.observable('');
 
-    _self.Words.push(new ChunkViewModel({ text: 'Where Words', font: 'Lobster' }));
-    _self.Words.push(new ChunkViewModel({ text: 'Fail', font: 'PermanentMarker' }));
-    _self.Words.push(new ChunkViewModel({ text: 'Music', font: 'DancingScript' }));
-    _self.Words.push(new ChunkViewModel({ text: 'Potato', font: 'SpecialElite' }));
+    this.ProcessSentence = function () {
 
-    this.AddChunk = function () {
-        let newChunk = new ChunkViewModel();
-        _self.Words.push(newChunk);
+        _self.SplitSentence([]);
+
+        let splitSentence = _self.SplittingSentence(_self.InputSentence());
+
+        splitSentence.forEach(chunk => {
+            if (chunk) {
+                _self.SplitSentence.push(new ChunkViewModel({ text: chunk }));
+            }
+        });
+       
+                       
     };
+
+    this.SplittingSentence = function (sentence) {
+        let resultSplitSentence = [];
+
+        let splitInput = sentence.split(' ');
+        let i = splitInput.length-1;
+        let even = false;
+
+        while (splitInput[i]) {
+            if (!even) {
+                resultSplitSentence.unshift(splitInput[i]);
+                i -= 1;
+            }
+            else {
+                resultSplitSentence.unshift(splitInput[i] + ' ' + splitInput[i - 1] ? splitInput[i - 1] : '');
+                i -= 2;
+            }
+
+            even = !even;
+        }
+
+        return resultSplitSentence;
+    };
+
+    _self.InputSentence('What even is this thing?');
+    _self.ProcessSentence();
 }
 
 function ChunkViewModel(model) {
@@ -27,10 +59,6 @@ function ChunkViewModel(model) {
 
         if (model.font)
             _self.Font(model.font);
-    };
-
-    this.DeleteChunk = function () {
-        app.Words.remove(_self);
     };
 
     if (model)

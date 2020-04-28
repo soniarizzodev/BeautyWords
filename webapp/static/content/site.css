@@ -2,9 +2,16 @@
     --font-size:4rem;
 }
 
+*{
+    box-sizing:border-box;
+}
+
 body {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
+    font-family: 'Manrope', sans-serif;
+    background-color:#C95D63;
+    color:#f3f9fd;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -13,28 +20,88 @@ body {
     padding-right: 15px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
 .canvas{
-    height:70vh;
+    margin:50px 0;
+    padding:100px;
     font-size:var(--font-size);
     border:1px solid #d8d8d8;
     border-radius:3px;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    align-items:center;    
+    align-items:center;   
+    background-color:#f3f9fd;
+    color:#272932; 
 }
 
 .canvas p{
    margin:0;
    line-height:calc(var(--font-size) / 3 * 2.5);   
    opacity:0.9;
+}
+
+label.big{
+    font-size:1.3rem;
+}
+
+.input-sentence{
+    display:block;
+    width:100%;
+    margin-bottom:.5rem;
+    padding:0 5px;
+    border-radius:3px;
+    border:none;
+    font-size:1.5rem;
+    color:#4f546b;
+}
+
+.controls .item{
+    margin-bottom:10px;
+}
+
+.controls .item p{
+    display:inline-block;
+    padding: .375rem;
+    padding-right:20px;
+    margin:0;
+    background-color:#ffffff;
+    border:1px solid #ffffff;
+    border-radius:.25rem;
+    height:calc(1.5em + .75rem + 2px);
+    color:#4f546b;
+}
+
+.controls .item select{
+    display:inline-block;
+    width:39%;
+    color:#4f546b;
+}
+
+h2{
+    font-size:2.7rem;
+}
+
+.padding-bottom-2rem{
+    padding-bottom:3rem;
+}
+
+.btn-primary{
+    background-color:#16b2b5;
+    border-color: #16acaf;
+}
+
+.btn-primary:hover {
+    background-color: #18a2a5;
+    border-color: #188d8f;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+     background-color: #18a2a5;
+    border-color: #188d8f;
+}
+
+a, a:hover, a:active{
+    color:#4f546b;
 }
 
 /*Fonts*/
