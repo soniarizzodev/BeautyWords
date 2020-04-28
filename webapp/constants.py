@@ -1,1 +1,1 @@
-HEROKU_DEPLOY = False
+HEROKU_DEPLOY = True
