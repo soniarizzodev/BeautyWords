@@ -9,6 +9,25 @@
             Automatically generate beautiful typography images with the click of a button
         </p>
     </div>
+    <div class="col-sm-12 col-md-6">
+        <div class="canvas" data-bind="foreach:Words">
+            <p data-bind="text:Text, class:Font"></p>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <div class="controls" data-bind="foreach:Words">
+            <input data-bind="textInput:Text"/>
+            <select data-bind="value:Font">
+                <option value="Lobster">Lobster</option>
+                <option value="LobsterTwo">Lobster Two</option>
+                <option value="DancingScript">Dancing Script</option>
+                <option value="PermanentMarker">Permanent Marker</option>
+                <option value="Satisfy">Satisfy</option>
+                <option value="SpecialElite">Special Elite</option>
+            </select>
+            <button data-bind="click:DeleteChunk">-</button>
+        </div>
+        <button data-bind="click:AddChunk">+</button>
+    </div> 
 </div>
-
 {% endblock %}
