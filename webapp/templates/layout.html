@@ -13,11 +13,16 @@
 
 <body>
     <div class="container body-content">
-        {% block content %}{% endblock %}
-        <hr />
-        <footer>
-            <p>&copy; {{ year }} - BeautyWrongs - Based on a bug from the development of <a href="https://github.com/soniarizzodev/BeautyWords" target="_blank" rel="noopener">BeautyWords</a>. Accidentally created by <a href="https://www.soniarizzodev.com/" target="_blank" rel="noopener">SoniaRizzoDev</a>.</p>
-        </footer>
+        <section>
+            {% block content %}{% endblock %}
+        </section>
+        <section>
+            <hr />
+            <footer>
+                <p>&copy; {{ year }} - BeautyWrongs - Based on a bug from the development of <a href="https://github.com/soniarizzodev/BeautyWords" target="_blank" rel="noopener">BeautyWords</a>. Accidentally created by <a href="https://www.soniarizzodev.com/" target="_blank" rel="noopener">SoniaRizzoDev</a>.</p>
+            </footer>
+        </section>
+        
     </div>
     <script type="text/javascript" src="/static/scripts/jquery-3.5.0.min.js"></script>
     <script type="text/javascript" src="/static/content/bootstrap/bootstrap.min.js"></script>

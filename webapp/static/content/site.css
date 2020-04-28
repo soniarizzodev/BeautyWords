@@ -6,18 +6,27 @@
     box-sizing:border-box;
 }
 
+html{
+    height:100%;
+}
+
 body {
     padding-top: 20px;
     padding-bottom: 20px;
     font-family: 'Manrope', sans-serif;
     background-color:#C95D63;
     color:#f3f9fd;
+    height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 
 .canvas{
@@ -91,7 +100,7 @@ h2{
     transform: rotate(+20deg); 
     font-size:1.5rem;
     position:relative;
-    top:0.7rem;
+    top:0.5rem;
 }
 
 .padding-bottom-2rem{
