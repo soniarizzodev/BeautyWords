@@ -2,39 +2,181 @@
     --font-size:4rem;
 }
 
+*{
+    box-sizing:border-box;
+}
+
+html{
+    height:100%;
+}
+
 body {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
+    font-family: 'Manrope', sans-serif;
+    background-color:#5abcbc;
+    color:#ffffff;
+    height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.separator{
+    display:block;
+    width:100%;
+    height:30px;
+}
+
+.separator div{
+    margin:20px auto;
+    height:1px;
+    width:200px;
+    background-color:#1e8f85a1;
 }
 
 .canvas{
-    height:70vh;
+    margin:50px 0 30px 0;
+    padding-top:100px;
+    padding-bottom:100px;
+    padding-left:5%;
+    padding-right:5%;
     font-size:var(--font-size);
     border:1px solid #d8d8d8;
     border-radius:3px;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    align-items:center;    
+    align-items:center;   
+    background-color:#f3f9fd;
+    color:#272932; 
 }
 
 .canvas p{
    margin:0;
    line-height:calc(var(--font-size) / 3 * 2.5);   
    opacity:0.9;
+   width:100%;
+   word-wrap:break-word;
+   text-align:center;
+}
+
+label.big{
+    font-size:1.3rem;
+}
+
+.input-sentence{
+    display:block;
+    width:100%;
+    margin-bottom:.5rem;
+    padding:0 5px;
+    border-radius:3px;
+    border:none;
+    font-size:1.5rem;
+    color:#4f546b;
+}
+
+.controls{
+    padding-top:10px;    
+}
+
+.controls .item{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    margin-bottom:10px;
+}
+
+.controls .item select{
+    display:inline-block;
+    color:#4f546b;
+    margin:0 5px;
+}
+
+.controls .item input{
+    display:inline-block;
+    color:#4f546b;
+}
+
+h2{
+    font-size:2.7rem;
+}
+
+.edit{
+    padding:20px;
+    border:1px solid #ffffff;
+    border-radius:.25rem;
+}
+
+.padding-bottom-2rem{
+    padding-bottom:3rem;
+}
+
+.btn.with-icon i{
+    padding-right:5px;
+}
+
+.btn-primary.full-width{
+    display:block;
+    width:100%;
+}
+
+.btn-primary.small{
+    font-size:0.8rem;
+}
+
+.btn-primary{
+    background-color:#008fb9;
+    border-color: #008fb9;
+}
+
+.btn-primary:hover {
+    background-color:#0081a7;
+    border-color: #0081a7;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    background-color:#0081a7;
+    border-color: #0081a7;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    background-color:#0081a7;
+    border-color: #0081a7;
+}
+
+.btn-red{
+    background-color:#eb6a71;
+    border-color: #eb6a71;
+    color:white;
+}
+
+.btn-red:hover {
+    background-color:#df585e;
+    border-color: #df585e;
+    color:white;
+}
+
+.btn-red:not(:disabled):not(.disabled).active, .btn-red:not(:disabled):not(.disabled):active, .show>.btn-red.dropdown-toggle {
+    background-color:#df585e;
+    border-color: #df585e;
+}
+
+.btn-red.focus, .btn-red:focus {
+    background-color:#df585e;
+    border-color: #df585e;
+}
+
+
+a, a:hover, a:active{
+    color:#4f546b;
 }
 
 /*Fonts*/
@@ -90,4 +232,11 @@ textarea {
 
 .SpecialElite {
     font-family: "SpecialElite";
+}
+
+@media (max-width:576px){
+    .canvas p{
+        font-size:3rem;    
+    }
+
 }
