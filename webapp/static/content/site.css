@@ -236,7 +236,7 @@ a, a:hover, a:active{
 
 @media (max-width:576px){
     .canvas p{
-        font-size:3rem;    
+        font-size:3rem;
+        line-height:calc(3rem / 3 * 2.5);    
     }
-
 }
