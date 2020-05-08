@@ -18,15 +18,41 @@
 </div>
 <div class="row">
     <div class="col-md-12 col-lg-8">
-        <form class="form-group">           
-            <input id="input_sentence" class="input-sentence form-control" data-bind="value:InputSentence" />
-            <div class="d-flex flex-row justify-content-end">
-                <button type="submit" class="btn btn-primary" role="button" data-bind="click:ProcessSentence">Generate!</button>
+        <div class="row">
+            <div class="col-12">
+                <form class="form-group">
+                    <input id="input_sentence" class="input-sentence form-control" data-bind="value:InputSentence" />
+                    <div class="d-flex flex-row justify-content-end">
+                        <button type="submit" class="btn btn-primary" role="button" data-bind="click:ProcessSentence">Generate!</button>
+                    </div>
+                </form>
             </div>
-        </form>
-        <div class="canvas" data-bind="foreach:SplitSentence">
-            <p data-bind="text:Text, class:Font"></p>
+        </div>       
+
+        <div class="row">
+            <div class="col-12">
+                <button data-bind="click:MakeScreenshot" class="btn btn-primary small with-icon" role="button">
+                    <i class="icofont-download" data-bind="visible:!IsProcessing()"></i>
+                    <div data-bind="visible:IsProcessing" class="spinner-border" role="status">
+                        <span class="sr-only">Processing...</span>
+                    </div>
+                    Get Poster
+                </button>
+
+                <!--<div class="colors" data-bind="foreach:Colors">
+                    <div data-bind="class:$data"></div>
+                </div>-->
+            </div>
         </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div id="canvas" class="canvas" data-bind="foreach:SplitSentence, class:CurrentColor">
+                    <p data-bind="text:Text, class:Font"></p>
+                </div>
+            </div>
+        </div>
+        
     </div>
     <div class="col-md-12 col-lg-4 form-group">
         <div class="edit">
@@ -46,4 +72,28 @@
 
     </div>
 </div>
+
+<div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Get your poster!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <a data-bind="attr:{href:DownloadUrl}" download="beautywords-image.png" class="btn btn-primary" role="button">Download Poster</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+{{super()}}
+<script type="text/javascript" src="/static/scripts/html2canvas.min.js"></script>a
 {% endblock %}
