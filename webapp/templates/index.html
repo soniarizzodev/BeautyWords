@@ -29,19 +29,11 @@
             </div>
         </div>       
 
-        <div class="row">
+        <div class="row padding-top-30">
             <div class="col-12">
-                <button data-bind="click:MakeScreenshot" class="btn btn-primary small with-icon" role="button">
-                    <i class="icofont-download" data-bind="visible:!IsProcessing()"></i>
-                    <div data-bind="visible:IsProcessing" class="spinner-border" role="status">
-                        <span class="sr-only">Processing...</span>
-                    </div>
-                    Get Poster
-                </button>
-
-                <!--<div class="colors" data-bind="foreach:Colors">
-                    <div data-bind="class:$data"></div>
-                </div>-->
+                <div class="colors" data-bind="foreach:Colors">
+                    <div data-bind="class:$data, click:function(data, event) { app.CurrentColor(data) }"></div>
+                </div>
             </div>
         </div>
         
@@ -73,6 +65,13 @@
     </div>
 </div>
 
+<button data-bind="click:MakeScreenshot" class="btn btn-red fab" role="button" aria-label="Download Poster" title="Download Poster">
+    <i class="icofont-download" data-bind="visible:!IsProcessing()"></i>
+    <div data-bind="visible:IsProcessing" class="spinner-border" role="status">
+        <span class="sr-only">Processing...</span>
+    </div>
+</button>
+
 <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -83,7 +82,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <a data-bind="attr:{href:DownloadUrl}" download="beautywords-image.png" class="btn btn-primary" role="button">Download Poster</a>
+                <a data-bind="attr:{href:DownloadUrl}" download="beautywords-image.png" class="btn btn-primary" role="button" aria-label="Download Poster">Download Poster</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
