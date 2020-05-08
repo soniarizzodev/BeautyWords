@@ -6,6 +6,14 @@ function App() {
     this.SplitSentence = ko.observableArray([]);
     this.InputSentence = ko.observable('');
     this.Fonts = ko.observableArray(['Lobster', 'LobsterTwo', 'PermanentMarker', 'DancingScript', 'SpecialElite', 'Satisfy']);
+    this.Colors = ko.observableArray(['color1', 'color2', 'color3', 'color4', 'color5', 'color6']);
+    this.CurrentColor = ko.observable('color1');
+    this.Canvas = ko.observable();
+    this.IsProcessing = ko.observable(false);
+
+    this.DownloadUrl = ko.computed(function () {
+        return _self.Canvas() ? _self.Canvas().toDataURL() : '';
+    });
 
     this.AddChunk = function () {
         let newChunk = new ChunkViewModel();
@@ -23,8 +31,6 @@ function App() {
                 _self.SplitSentence.push(new ChunkViewModel({ text: chunk, font: _self.GetRandomFont(_self.Fonts()) }));
             }
         });
-
-
     };
 
     this.SplittingSentence = function (sentence) {
@@ -64,6 +70,20 @@ function App() {
     this.ChangeFonts = function () {
         _self.SplitSentence().forEach(chunk => {
             chunk.Font(_self.GetRandomFont(_self.Fonts()));
+        });
+    };
+
+    this.MakeScreenshot = function () {
+        _self.IsProcessing(true);
+
+        const useWidth = document.querySelector('#canvas').offsetWidth;
+        const useHeight = document.querySelector('#canvas').offsetHeight;
+        
+        html2canvas(document.querySelector('#canvas'), { scale: 5, width: useWidth, height: useHeight }).then(canvas => {
+            canvas.id = "canvasID";
+            _self.Canvas(canvas);
+            $('#downloadModal').modal('show');
+            _self.IsProcessing(false);
         });
     };
 
