@@ -22,21 +22,28 @@
 </head>
 
 <body>
-    <div class="container body-content">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="LobsterTwo">BeautyWords</h2>
-                <p>
-                    Automatically generate beautiful typography images with the click of a button.
-                </p>
+    <section class="body-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="LobsterTwo logo"><a href="{{url_for('home')}}">BeautyWords</a></h2>
+                    <p>
+                        Automatically generate beautiful typography images with the click of a button.
+                    </p>
+                </div>
             </div>
-        </div>        
-        {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
+        </div>
+        
+        
         <hr />
         <footer>
             <p>&copy; {{ year }} - BeautyWords - Created by <a href="https://www.soniarizzodev.com/" target="_blank" rel="noopener">SoniaRizzoDev</a> - Check out the code on <a href="https://github.com/soniarizzodev/BeautyWords" target="_blank" rel="noopener">GitHub</a></p>
+            <a href="{{url_for('privacy')}}">Privacy</a>
+            
         </footer>
-    </div>
+    </section>
+    
     <script type="text/javascript" src="/static/scripts/jquery-3.5.0.min.js"></script>
     <script type="text/javascript" src="/static/content/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="/static/scripts/knockout-3.5.1.debug.js"></script>

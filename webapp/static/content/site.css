@@ -29,6 +29,15 @@ body {
     justify-content:space-between;
 }
 
+.logo a{
+   color:#ffffff; 
+}
+
+.logo a:hover, .logo a:focus, .logo a:active {
+   color:#ffffff;
+   text-decoration:none; 
+}
+
 .separator{
     display:block;
     width:100%;
@@ -117,6 +126,46 @@ h2{
 
 .padding-bottom-2rem{
     padding-bottom:3rem;
+}
+
+.padding-top-30{
+    padding-top:30px;
+}
+
+ h1{
+    font-size:1.9rem;
+    text-transform:uppercase;
+}
+
+.privacy h2{
+    font-size:1.4rem;
+}
+
+.privacy h2.title{
+    margin:0;
+    padding-bottom:30px;
+}
+
+section.privacy{
+    margin:20px 0;
+    padding-top:1rem;;
+    border:1px solid #ffffff;
+    border-radius:.35rem;
+    background-color:#fffdfdc2;
+    color:#4f546b;
+}
+
+footer{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:flex-end;
+    padding:10px 0;
+}
+
+footer p{
+    margin:0;
+    padding-right:5px;
 }
 
 .btn.with-icon i{
