@@ -78,14 +78,22 @@ body {
 .colors{
     display:flex;
     flex-direction:row;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    
 }
 
 .colors div{
-    width:50px;
-    height:50px;
-    border:1px solid #d1d1d1;
+    width:30px;
+    height:30px;
+    border:1px solid #efefef;
     border-radius:.35rem;
-    margin:0 5px;
+    margin:0 5px 5px 5px;
+}
+
+.colors div:hover{
+    cursor:pointer;
+    border:2px solid #efefef;
 }
 
 .color1{
@@ -94,28 +102,48 @@ body {
 }
 
 .color2{
-    background-color:#e5989b;
-    color:#272932; 
+    background-color:#ff1654;
+    color:white; 
 }
 
 .color3{
-    background-color:#e63946;
-    color:#272932; 
+    background-color:#247ba0;
+    color:white; 
 }
 
 .color4{
-    background-color:#4ecdc4;
-    color:#272932; 
+    background-color:#5abcbc;
+    color:white; 
 }
 
 .color5{
     background-color:#1c2541;
-    color:#272932; 
+    color:white; 
 }
 
 .color6{
-    background-color:#0b132b;
-    color:#272932; 
+    background-color:#21242e;
+    color:white; 
+}
+
+.color7{
+    background-color:#f25f5c;
+    color:white; 
+}
+
+.color8{
+    background-color:#b5838d;
+    color:white; 
+}
+
+.color9{
+    background-color:#ffe066;
+    color:#333333; 
+}
+
+.color10{
+    background-color:#dcdcdd;
+    color:#333333; 
 }
 
 label.big{
@@ -209,6 +237,20 @@ footer p{
     padding-right:5px;
 }
 
+.btn.fab{
+    position:fixed;
+    bottom:40px;
+    right:25px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 4px 2px rgba(0,0,0,0.2);
+    font-size:24px;
+}
+
 .btn.with-icon i{
     padding-right:5px;
 }
@@ -220,6 +262,7 @@ footer p{
 
 .btn-primary.small{
     font-size:0.8rem;
+    white-space: nowrap;
 }
 
 .btn-primary.small .spinner-border{
@@ -227,6 +270,11 @@ footer p{
     height:1rem;
     margin-right:5px;
     border:2px solid currentColor;
+    border-right-color:transparent;
+}
+
+.btn.fab .spinner-border{
+    border:3px solid currentColor;
     border-right-color:transparent;
 }
 
@@ -263,13 +311,13 @@ footer p{
 }
 
 .btn-red:not(:disabled):not(.disabled).active, .btn-red:not(:disabled):not(.disabled):active, .show>.btn-red.dropdown-toggle {
-    background-color:#df585e;
-    border-color: #df585e;
+    background-color:#eb6a71;
+    border-color: #eb6a71;
 }
 
 .btn-red.focus, .btn-red:focus {
-    background-color:#df585e;
-    border-color: #df585e;
+    background-color:#eb6a71;
+    border-color: #eb6a71;
 }
 
 
