@@ -12,7 +12,6 @@ html{
 
 body {
     padding-top: 20px;
-    padding-bottom: 20px;
     font-family: 'Manrope', sans-serif;
     background-color:#5abcbc;
     color:#ffffff;
@@ -102,7 +101,7 @@ body {
 }
 
 .color2{
-    background-color:#ff1654;
+    background-color:#f45b69;
     color:white; 
 }
 
@@ -229,18 +228,20 @@ footer{
     flex-direction:row;
     justify-content:space-between;
     align-items:flex-end;
-    padding:10px 0;
+    padding:0;
+    padding-top:10px;
+    padding-bottom:5px;
 }
 
 footer p{
     margin:0;
-    padding-right:5px;
+    padding-right:10px;
 }
 
 .btn.fab{
     position:fixed;
-    bottom:40px;
-    right:25px;
+    bottom:30px;
+    right:30px;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -299,25 +300,25 @@ footer p{
 }
 
 .btn-red{
-    background-color:#eb6a71;
-    border-color: #eb6a71;
+    background-color:#f45b69;
+    border-color: #f45b69;
     color:white;
 }
 
 .btn-red:hover {
-    background-color:#df585e;
-    border-color: #df585e;
+    background-color:#ec4d5b;
+    border-color: #ec4d5b;
     color:white;
 }
 
 .btn-red:not(:disabled):not(.disabled).active, .btn-red:not(:disabled):not(.disabled):active, .show>.btn-red.dropdown-toggle {
-    background-color:#eb6a71;
-    border-color: #eb6a71;
+    background-color:#f45b69;
+    border-color: #f45b69;
 }
 
 .btn-red.focus, .btn-red:focus {
-    background-color:#eb6a71;
-    border-color: #eb6a71;
+    background-color:#f45b69;
+    border-color: #f45b69;
 }
 
 
