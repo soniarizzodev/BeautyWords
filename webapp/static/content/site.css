@@ -172,14 +172,13 @@ label.big{
 }
 
 .controls .item select{
-    display:inline-block;
     color:#4f546b;
-    margin:0 5px;
+    margin:0 5px;   
 }
 
 .controls .item input{
-    display:inline-block;
     color:#4f546b;
+    min-width:0;
 }
 
 h2{
