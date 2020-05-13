@@ -25,3 +25,12 @@ def privacy():
         year=datetime.now().year,
         message='Privacy and Cookie policy.'
     )
+
+@app.route('/hall-of-fame')
+def hall_of_fame():
+    """Renders the supporters hall of fame page."""
+    return render_template(
+        'hall_of_fame.html',
+        title='Supporters Hall Of Fame',
+        year=datetime.now().year,
+    )

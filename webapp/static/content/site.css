@@ -28,6 +28,12 @@ body {
     justify-content:space-between;
 }
 
+.container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
 .logo a{
    color:#ffffff; 
 }
@@ -185,10 +191,11 @@ h2{
     font-size:2.7rem;
 }
 
-.edit{
+.box{
     padding:20px;
     border:1px solid #ffffff;
     border-radius:.25rem;
+    margin-bottom:20px;
 }
 
 .padding-bottom-2rem{
@@ -228,13 +235,91 @@ footer{
     justify-content:space-between;
     align-items:flex-end;
     padding:0;
-    padding-top:10px;
+    padding-top:20px;
     padding-bottom:5px;
 }
 
 footer p{
     margin:0;
     padding-right:10px;
+}
+
+.hall-of-fame{
+    background-color:#1c1c1c;
+    color:#ffb301;
+    border:1px solid #bababa;
+    border-radius:.35rem;
+    padding:20px;
+    line-height:1;
+    flex:1;
+    font-family: 'Cinzel', serif;
+}
+
+.hall-of-fame .title{
+    text-align:center;
+    font-size:4rem;
+    font-weight:600;    
+}
+
+.hall-of-fame .title.top{
+    font-size:1.5rem; 
+    font-weight:400;
+}
+
+.hall-of-fame .title .small{
+    font-size:2rem;
+}
+
+.supporters{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+
+.supporter{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+a.supporter{
+    cursor:pointer;
+    border-bottom:1px solid #1c1c1c;
+    will-change:border-bottom;
+    transition:border-bottom 0.3s ease;
+}
+
+a.supporter:hover{
+    text-decoration:none;
+    border-bottom:1px solid #ffd061;
+}
+
+.supporter svg{
+    height:100px;
+    width:100px;
+    fill:#ffb915;  
+    will-change:fill;
+    transition:fill 0.3s ease;  
+}
+
+a.supporter:hover svg{
+    fill:#ffc231; 
+}
+
+.supporter p{
+    padding-top:10px;
+    margin:0;
+    color:#ffb915;
+    font-size:1.1rem;
+}
+
+a.supporter:hover p{
+    color:#ffd061; 
+    will-change:color;
+    transition:color 0.3s ease; 
 }
 
 .btn.fab{
@@ -365,6 +450,28 @@ a, a:hover, a:active{
     src: url(../fonts/SpecialElite-Regular.ttf);
 }
 
+@font-face {
+    font-family: "FugazOne";
+    src: url(../fonts/FugazOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Spinnaker";
+    src: url(../fonts/Spinnaker-Regular.ttf);
+}
+
+@font-face {
+  font-family: Cinzel;
+  src: url(../fonts/Cinzel-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Cinzel;
+  src: url(../fonts/Cinzel-Bold.ttf);
+  font-weight: bold;
+}
+
 .Lobster {
     font-family: "Lobster";
 }
@@ -387,6 +494,18 @@ a, a:hover, a:active{
 
 .SpecialElite {
     font-family: "SpecialElite";
+}
+
+.FugazOne {
+    font-family: "FugazOne";
+}
+
+.Spinnaker {
+    font-family: "Spinnaker";
+}
+
+.Cinzel {
+    font-family: "Cinzel", serif;
 }
 
 @media (max-width:576px){
