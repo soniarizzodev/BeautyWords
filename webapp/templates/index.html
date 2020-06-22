@@ -47,19 +47,34 @@
         
     </div>
     <div class="col-md-12 col-lg-4 form-group">
-        <div class="edit">
-            <p data-bind="visible:SplitSentence().length > 0">Edit</p>
-            <button data-bind="click:ChangeFonts" class="btn btn-primary small with-icon" role="button"><i class="icofont-ui-rotation"></i>Change Fonts</button>
-            <div class="controls" data-bind="foreach:SplitSentence">
-                <div class="item">
-                    <input data-bind="textInput:Text" class="form-control" aria-label="Sentence Chunk" />
-                    <select data-bind="options: $root.Fonts(),
+        <div class="row">
+            <div class="col-12">
+                <div class="box">
+                    <p data-bind="visible:SplitSentence().length > 0">Edit</p>
+                    <button data-bind="click:ChangeFonts" class="btn btn-primary small with-icon" role="button"><i class="icofont-ui-rotation"></i>Change Fonts</button>
+                    <div class="controls" data-bind="foreach:SplitSentence">
+                        <div class="item">
+                            <input data-bind="textInput:Text" class="form-control" aria-label="Sentence Chunk" />
+                            <select data-bind="options: $root.Fonts(),
                                     value: Font" class="custom-select" aria-label="Select a Font"></select>
-                    <button data-bind="click:DeleteChunk" class="btn btn-red" role="button" aria-label="remove chunk" title="Remove Chunk"><i class="icofont-minus"></i></button>
-                </div>
+                            <button data-bind="click:DeleteChunk" class="btn btn-red" role="button" aria-label="remove chunk" title="Remove Chunk"><i class="icofont-minus"></i></button>
+                        </div>
 
+                    </div>
+                    <button data-bind="click:AddChunk" class="btn btn-primary full-width" role="button" aria-label="add chunk" title="Add Chunk"><i class="icofont-plus"></i></button>
+                </div>
             </div>
-            <button data-bind="click:AddChunk" class="btn btn-primary full-width" role="button" aria-label="add chunk" title="Add Chunk"><i class="icofont-plus"></i></button>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="box">
+                    <p><strong>Hey there!</strong> I'm Sonia and I created this tool. I heard you want to support my work? Feel free to buy me a coffee, a tea, a car. Whatever you want. Everything is appreciated!</p>
+
+                    <p>I will display your name (no matter the amount) on my special <strong><a href="{{url_for('hall_of_fame')}}">"Supporters Hall of Fame"</a></strong>! If you prefer to stay anonymous just say so on the donation message though, and I'll respect that :).</p>
+                    <a href='https://ko-fi.com/C0C71PDPA' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+                </div>
+            </div>
         </div>
 
     </div>

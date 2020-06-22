@@ -18,6 +18,14 @@ body {
     height:100%;
 }
 
+body.hof-container {
+    padding-top: 20px;
+    font-family: 'Manrope', sans-serif;
+    background-color:#1c1c1c;
+    color:#ffffff;
+    height:100%;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -28,8 +36,14 @@ body {
     justify-content:space-between;
 }
 
+.container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
 .logo a{
-   color:#ffffff; 
+   color:#ffffff !important; 
 }
 
 .logo a:hover, .logo a:focus, .logo a:active {
@@ -185,10 +199,11 @@ h2{
     font-size:2.7rem;
 }
 
-.edit{
+.box{
     padding:20px;
     border:1px solid #ffffff;
     border-radius:.25rem;
+    margin-bottom:20px;
 }
 
 .padding-bottom-2rem{
@@ -228,13 +243,121 @@ footer{
     justify-content:space-between;
     align-items:flex-end;
     padding:0;
-    padding-top:10px;
+    padding-top:20px;
     padding-bottom:5px;
 }
 
 footer p{
     margin:0;
     padding-right:10px;
+}
+
+.hall-of-fame{
+    color:#ffb301;
+    border:.35rem solid #ffe29f;
+    border-radius:.35rem;
+    margin:50px 0;
+    line-height:1;
+    flex:1;
+    font-family: 'Cinzel', serif;
+    animation: flicker 7s infinite alternate; 
+}
+
+.hall-of-fame .title-section{
+    padding:70px 0;   
+}
+
+.hall-of-fame .title{
+    text-align:center;
+    font-size:4rem;
+    font-weight:600;    
+}
+
+.hall-of-fame .title.top{
+    font-size:1.5rem; 
+    font-weight:400;
+}
+
+.hall-of-fame .title .small{
+    font-size:2rem;
+}
+
+.supporters{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+
+.supporter{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    padding-bottom:70px;
+}
+
+a.supporter{
+    cursor:pointer;
+    border-bottom:1px solid #1c1c1c;
+    will-change:border-bottom;
+    transition:border-bottom 0.3s ease;
+}
+
+a.supporter:hover{
+    text-decoration:none;
+    border-bottom:1px solid #ffd061;
+}
+
+.supporter svg{
+    height:100px;
+    width:100px;
+    fill:#ffb915;  
+    will-change:fill;
+    transition:fill 0.3s ease;  
+}
+
+a.supporter:hover svg{
+    fill:#ffc231; 
+}
+
+.supporter p{
+    padding-top:10px;
+    margin:0;
+    color:#ffb915;
+    font-size:1.1rem;
+}
+
+a.supporter:hover p{
+    color:#ffd061; 
+    will-change:color;
+    transition:color 0.3s ease; 
+}
+
+/* Animate neon flicker */
+@keyframes flicker {
+    
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {             
+        
+        box-shadow:
+            0 0 .5rem #ffe29f,
+            inset 0 0 .5rem #ffe29f,
+            0 0 .35rem #ffe29f,
+            inset 0 0 .35rem #ffe29f,
+            0 0 1rem #ffe29f,
+            inset 0 0 .35rem #ffe29f;        
+    }
+    
+    20%, 24%, 55% {    
+        box-shadow:            
+            0 0 .5rem #918260,
+            inset 0 0 .5rem #918260,
+            0 0 .35rem #918260,
+            inset 0 0 .35rem #918260,
+            0 0 1rem #918260,
+            inset 0 0 .35rem #918260;  
+    }    
 }
 
 .btn.fab{
@@ -325,6 +448,10 @@ a, a:hover, a:active{
     color:#4f546b;
 }
 
+.hof-container a, .hof-container a:hover, .hof-container a:active{
+    color:#8e92a8;
+}
+
 .modal-title{
     color:#4f546b;
 }
@@ -365,6 +492,28 @@ a, a:hover, a:active{
     src: url(../fonts/SpecialElite-Regular.ttf);
 }
 
+@font-face {
+    font-family: "FugazOne";
+    src: url(../fonts/FugazOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Spinnaker";
+    src: url(../fonts/Spinnaker-Regular.ttf);
+}
+
+@font-face {
+  font-family: Cinzel;
+  src: url(../fonts/Cinzel-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Cinzel;
+  src: url(../fonts/Cinzel-Bold.ttf);
+  font-weight: bold;
+}
+
 .Lobster {
     font-family: "Lobster";
 }
@@ -387,6 +536,24 @@ a, a:hover, a:active{
 
 .SpecialElite {
     font-family: "SpecialElite";
+}
+
+.FugazOne {
+    font-family: "FugazOne";
+}
+
+.Spinnaker {
+    font-family: "Spinnaker";
+}
+
+.Cinzel {
+    font-family: "Cinzel", serif;
+}
+
+@media (max-width:767px){
+    .hall-of-fame .title .small{
+        display:block;
+    }
 }
 
 @media (max-width:576px){
