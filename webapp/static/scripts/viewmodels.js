@@ -12,6 +12,7 @@ function App() {
     this.CurrentColor = ko.observable('color1');
     this.Canvas = ko.observable();
     this.IsProcessing = ko.observable(false);
+    this.GenerationsCount = ko.observable();
 
     this.DownloadUrl = ko.computed(function () {
         return _self.Canvas() ? _self.Canvas().toDataURL() : '';
@@ -33,6 +34,8 @@ function App() {
                 _self.SplitSentence.push(new ChunkViewModel({ text: chunk, font: _self.GetRandomFont(_self.Fonts()) }));
             }
         });
+
+        _self.AddGenerationToCount();
     };
 
     this.SplittingSentence = function (sentence) {
@@ -87,6 +90,33 @@ function App() {
             $('#downloadModal').modal('show');
             _self.IsProcessing(false);
         });
+    };
+
+    this.GetGenerationsCount = function () {
+        fetch(host + '/getgenerationscount')
+            .then(function (response) {
+                if (response.ok)
+                    return response.json();
+
+            }).then(function (response) {
+                if (response.data.count) {
+                    _self.GenerationsCount(response.data.count);
+                }
+            });
+    };
+
+    this.AddGenerationToCount = function () {
+        fetch(host + '/addgeneration')
+            .then(function (response) {
+                if (response.ok)
+                    return response.json();
+                else
+                    console.log("Failed to add generation to counter");
+
+            }).then(function (response) {
+                if (response.status === false)
+                    console.log("Failed to add generation to counter");
+            });
     };
 
     _self.SplitSentence.push(new ChunkViewModel({ text: 'Life is', font: 'LobsterTwo' }));
