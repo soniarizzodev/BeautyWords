@@ -1,5 +1,6 @@
 :root{
     --font-size:4rem;
+    font-size:16px;
 }
 
 *{
@@ -7,30 +8,29 @@
 }
 
 html{
-    height:100%;
+    min-height:100vh;
 }
 
-body {
-    padding-top: 20px;
+body {    
     font-family: 'Manrope', sans-serif;
     background-color:#5abcbc;
     color:#ffffff;
-    height:100%;
+    min-height:100vh;
 }
 
 body.hof-container {
-    padding-top: 20px;
     font-family: 'Manrope', sans-serif;
     background-color:#1c1c1c;
     color:#ffffff;
-    height:100%;
+    min-height:100vh;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
-    height:100%;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
@@ -66,8 +66,8 @@ body.hof-container {
 
 .canvas{
     margin:10px 0 30px 0;
-    padding-top:100px;
-    padding-bottom:100px;
+    padding-top:150px;
+    padding-bottom:150px;
     padding-left:5%;
     padding-right:5%;
     font-size:var(--font-size);
@@ -254,13 +254,13 @@ footer p{
 
 .hall-of-fame{
     color:#ffb301;
-    border:.35rem solid #ffe29f;
-    border-radius:.35rem;
+    border:6px solid #ffe7af;
+    border-radius:6px;
     margin:50px 0;
     line-height:1;
-    flex:1;
-    font-family: 'Cinzel', serif;
-    animation: flicker 7s infinite alternate; 
+    flex:1;  
+    animation: flicker 5s alternate infinite;
+    font-family: 'Cinzel', serif;     
 }
 
 .hall-of-fame .title-section{
@@ -295,19 +295,20 @@ footer p{
     justify-content:space-between;
     align-items:center;
     padding:0 20px;
-    padding-bottom:70px;
+    padding-bottom:7px;
+    margin-bottom:63px;
 }
 
 a.supporter{
     cursor:pointer;
-    border-bottom:1px solid #1c1c1c;
+    border-bottom:2px solid #1c1c1c;
     will-change:border-bottom;
     transition:border-bottom 0.3s ease;
 }
 
 a.supporter:hover{
     text-decoration:none;
-    border-bottom:1px solid #ffd061;
+    border-bottom:2px solid #ffc231;
 }
 
 .supporter svg{
@@ -338,26 +339,25 @@ a.supporter:hover p{
 /* Animate neon flicker */
 @keyframes flicker {
     
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {             
-        
+   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
         box-shadow:
-            0 0 .5rem #ffe29f,
-            inset 0 0 .5rem #ffe29f,
-            0 0 .35rem #ffe29f,
-            inset 0 0 .35rem #ffe29f,
-            0 0 1rem #ffe29f,
-            inset 0 0 .35rem #ffe29f;        
+            0 0 6px #ffe7af,
+            inset 0 0 6px #ffe7af,
+            0 0 15px #ffcc57,
+            inset 0 0 15px #ffcc57,
+            0 0 20px #ffcc57,
+            inset 0 0 20px #ffcc57;       
     }
     
-    20%, 24%, 55% {    
-        box-shadow:            
-            0 0 .5rem #918260,
-            inset 0 0 .5rem #918260,
-            0 0 .35rem #918260,
-            inset 0 0 .35rem #918260,
-            0 0 1rem #918260,
-            inset 0 0 .35rem #918260;  
-    }    
+    20%, 24%, 55% {  
+        box-shadow:
+            0 0 6px #ffecc0,
+            inset 0 0 6px #ffecc0,
+            0 0 15px #918260,
+            inset 0 0 15px #918260,
+            0 0 20px #918260,
+            inset 0 0 20px #918260;  
+    }
 }
 
 .btn.fab{
