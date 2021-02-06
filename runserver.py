@@ -1,5 +1,5 @@
 """
-This script runs the BeautyWords application using a development server.
+This script runs the BeautyWrongs application using a development server.
 """
 
 from os import environ

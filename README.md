@@ -1,2 +1,2 @@
-# BeautyWords
-Automatically generate nice typography posters with your favourite phrases
+# BeautyWrongs
+Generate hilarious nonsense based on any meaningful sentence you can think of.

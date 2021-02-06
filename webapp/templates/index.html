@@ -1,47 +1,112 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
 <div class="row">
-    <div class="col-12 padding-bottom-2rem">
-        <h2 class="LobsterTwo">Beauty<span class="line">Words</span><span class="wrongs">Wrongs</span></h2>
-        <p>
-            Generate beautiful images with click of button. My code will eat your words.
-        </p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-12 col-md-6">
-        <form class="form-group">
-            <div class="d-flex flex-row justify-content-center">
-                <label for="input_sentence" class="big">Type your meaningful sentence</label>
-            </div>           
-            <input id="input_sentence" class="input-sentence form-control" data-bind="value:InputSentence" />
-            <div class="d-flex flex-row justify-content-end">
-                <button type="submit" class="btn btn-primary" data-bind="click:ProcessSentence">Generate</button>
-            </div>
-        </form>
-        <div class="canvas" data-bind="foreach:SplitSentence">
-            <p data-bind="text:Text, class:Font"></p>
+    <div class="col-md-12 col-lg-8">
+        <div class="separator">
+            <div class="d-block d-lg-none"></div>
         </div>
     </div>
-
-    <div class="col-sm-12 col-md-6">
-        <label data-bind="visible:SplitSentence().length > 0">Change fonts</label>
-        <div class="controls" data-bind="foreach:SplitSentence">
-            <div class="item">
-                <p data-bind="text:Text"></p>
-                <select data-bind="value:Font" class="form-control">
-                    <option value="Lobster">Lobster</option>
-                    <option value="LobsterTwo">Lobster Two</option>
-                    <option value="DancingScript">Dancing Script</option>
-                    <option value="PermanentMarker">Permanent Marker</option>
-                    <option value="Satisfy">Satisfy</option>
-                    <option value="SpecialElite">Special Elite</option>
-                </select>
-            </div>
-
+    <div class="col-md-12 col-lg-4"></div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-8">
+        <div class="d-flex flex-row justify-content-center">
+            <label for="input_sentence" class="big">Type your meaningful sentence</label>
         </div>
     </div>
 </div>
-    {% endblock %}
+<div class="row">
+    <div class="col-md-12 col-lg-8">
+        <div class="row">
+            <div class="col-12">
+                <form class="form-group">
+                    <input id="input_sentence" class="input-sentence form-control" data-bind="value:InputSentence" />
+                    <div class="d-flex flex-row justify-content-end">
+                        <button type="submit" class="btn btn-primary" role="button" data-bind="click:ProcessSentence">Generate!</button>
+                    </div>
+                </form>
+            </div>
+        </div>       
+
+        <div class="row padding-top-30">
+            <div class="col-12">
+                <div class="colors" data-bind="foreach:Colors">
+                    <div data-bind="class:$data, click:function(data, event) { app.CurrentColor(data) }"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div id="canvas" class="canvas" data-bind="foreach:SplitSentence, class:CurrentColor">
+                    <p data-bind="text:Text, class:Font"></p>
+                </div>
+                <button data-bind="click:MakeScreenshot" class="btn btn-red fab" role="button" aria-label="Download Poster" title="Download Poster">
+                    <i class="icofont-download" data-bind="visible:!IsProcessing()"></i>
+                    <div data-bind="visible:IsProcessing" class="spinner-border" role="status">
+                        <span class="sr-only">Processing...</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-md-12 col-lg-4 form-group">
+        <div class="row">
+            <div class="col-12">
+                <div class="box">
+                    <p data-bind="visible:SplitSentence().length > 0">Edit</p>
+                    <button data-bind="click:ChangeFonts" class="btn btn-primary small with-icon" role="button"><i class="icofont-ui-rotation"></i>Change Fonts</button>
+                    <div class="controls" data-bind="foreach:SplitSentence">
+                        <div class="item">
+                            <input data-bind="textInput:Text" class="form-control" aria-label="Sentence Chunk" />
+                            <select data-bind="options: $root.Fonts(),
+                                    value: Font" class="custom-select" aria-label="Select a Font"></select>
+                            <button data-bind="click:DeleteChunk" class="btn btn-red" role="button" aria-label="remove chunk" title="Remove Chunk"><i class="icofont-minus"></i></button>
+                        </div>
+
+                    </div>
+                    <button data-bind="click:AddChunk" class="btn btn-primary full-width" role="button" aria-label="add chunk" title="Add Chunk"><i class="icofont-plus"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="box">
+                    <p><strong>Hey there!</strong> I'm Sonia and I created this tool. I heard you want to support my work? Feel free to buy me a coffee, a tea, a car. Whatever you want. Everything is appreciated!</p>
+
+                    <p>I will display your name (no matter the amount) on my special <strong><a href="{{url_for('hall_of_fame')}}">"Supporters Hall of Fame"</a></strong>! If you prefer to stay anonymous just say so on the donation message though, and I'll respect that :).</p>
+                    <a href='https://ko-fi.com/C0C71PDPA' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Get your poster!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <a data-bind="attr:{href:DownloadUrl}" download="beautywrongs-image.png" class="btn btn-primary" role="button" aria-label="Download Poster">Download Poster</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+{{super()}}
+<script type="text/javascript" src="/static/scripts/html2canvas.min.js"></script>
+{% endblock %}
