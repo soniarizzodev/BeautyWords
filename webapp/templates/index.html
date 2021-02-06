@@ -42,6 +42,12 @@
                 <div id="canvas" class="canvas" data-bind="foreach:SplitSentence, class:CurrentColor">
                     <p data-bind="text:Text, class:Font"></p>
                 </div>
+                <button data-bind="click:MakeScreenshot" class="btn btn-red fab" role="button" aria-label="Download Poster" title="Download Poster">
+                    <i class="icofont-download" data-bind="visible:!IsProcessing()"></i>
+                    <div data-bind="visible:IsProcessing" class="spinner-border" role="status">
+                        <span class="sr-only">Processing...</span>
+                    </div>
+                </button>
             </div>
         </div>
         
@@ -79,13 +85,6 @@
 
     </div>
 </div>
-
-<button data-bind="click:MakeScreenshot" class="btn btn-red fab" role="button" aria-label="Download Poster" title="Download Poster">
-    <i class="icofont-download" data-bind="visible:!IsProcessing()"></i>
-    <div data-bind="visible:IsProcessing" class="spinner-border" role="status">
-        <span class="sr-only">Processing...</span>
-    </div>
-</button>
 
 <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
