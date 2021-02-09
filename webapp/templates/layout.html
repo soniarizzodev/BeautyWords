@@ -37,7 +37,11 @@
 </head>
 
 <body>
-    <section class="body-content">
+    <div class="banner">
+        <a href="https://www.producthunt.com/posts/beautywords" target="_blank" rel="noopener">This is launch day on Product Hunt! Come show your support! &#128640;</a>
+    </div>
+
+    <section class="body-content with-banner">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -49,16 +53,17 @@
             </div>
             {% block content %}{% endblock %}
         </div>
-        
-       
+
         <footer>
-            <p>&copy; {{ year }} - BeautyWords - Created by <a href="https://www.soniarizzodev.com/" target="_blank" rel="noopener">SoniaRizzoDev</a> - Check out the code on <a href="https://github.com/soniarizzodev/BeautyWords" target="_blank" rel="noopener">GitHub</a>
-            - Visit my hilariously damaged brother <a href="https://beautywrongs.herokuapp.com/" target="_blank" rel="noopener">BeautyWrongs</a></p>
+            <p>
+                &copy; {{ year }} - BeautyWords - Created by <a href="https://www.soniarizzodev.com/" target="_blank" rel="noopener">SoniaRizzoDev</a> - Check out the code on <a href="https://github.com/soniarizzodev/BeautyWords" target="_blank" rel="noopener">GitHub</a>
+                - Visit my hilariously damaged brother <a href="https://beautywrongs.herokuapp.com/" target="_blank" rel="noopener">BeautyWrongs</a>
+            </p>
             <a href="{{url_for('privacy')}}">Privacy</a>
-            
+
         </footer>
     </section>
-    
+
     <script type="text/javascript" src="/static/scripts/jquery-3.5.0.min.js"></script>
     <script type="text/javascript" src="/static/content/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="/static/scripts/knockout-3.5.1.debug.js"></script>

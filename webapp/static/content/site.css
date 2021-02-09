@@ -28,6 +28,29 @@ body.hof-container {
     min-height:100vh;
 }
 
+.banner{
+    position:fixed;
+    width:100%;
+    padding:0.7rem;
+    text-align:center;
+    font-weight:bold;
+    background-color:#ff3d6a;
+    z-index:1000;
+}
+
+.banner a{
+    color:white;
+    text-decoration:underline;
+}
+
+.banner a:hover{
+    color:#ffffffe6;
+}
+
+.body-content.with-banner{
+    padding-top:50px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-top: 20px;
