@@ -274,12 +274,16 @@ footer{
     align-items:flex-end;
     padding:0;
     padding-top:20px;
-    padding-bottom:5px;
+    padding-bottom:75px;
 }
 
 footer p{
     margin:0;
     padding-right:10px;
+}
+
+.hof-container footer{
+    padding-bottom:5px;
 }
 
 .hall-of-fame{
@@ -476,10 +480,11 @@ a.supporter:hover p{
 
 a, a:hover, a:active{
     color:#4f546b;
+    text-decoration:underline;
 }
 
-.hof-container a, .hof-container a:hover, .hof-container a:active{
-    color:#8e92a8;
+.hof-container a, .hof-container a:hover, .hof-container a:active {
+    color: #8e92a8;
 }
 
 .modal-title{

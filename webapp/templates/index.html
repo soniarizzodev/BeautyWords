@@ -27,7 +27,7 @@
                     </div>
                 </form>
             </div>
-        </div>       
+        </div>
 
         <div class="row padding-top-30">
             <div class="col-12">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-12">
                 <div id="canvas" class="canvas" data-bind="foreach:SplitSentence, class:CurrentColor">
@@ -50,7 +50,7 @@
                 </button>
             </div>
         </div>
-        
+
     </div>
     <div class="col-md-12 col-lg-4 form-group">
         <div class="row">
@@ -75,11 +75,14 @@
         <div class="row">
             <div class="col-12">
                 <div class="box">
-                    <p><strong>Hey there!</strong> I'm Sonia and I created this tool. I heard you want to support my work? Feel free to buy me a coffee, a tea, a car. Whatever you want. Everything is appreciated!</p>
+                    <p><strong>Hey there!</strong> I'm Sonia and I created this tool. I heard you want to support my work and help cover the expenses? 
+                    Feel free to do so by clicking on the button at the bottom left of the page. Everything is very appreciated!</p>
 
-                    <p>I will display your name (no matter the amount) on my special <strong><a href="{{url_for('hall_of_fame')}}">"Supporters Hall of Fame"</a></strong>! If you prefer to stay anonymous just say so on the donation message though, and I'll respect that :).</p>
-                    <a href='https://ko-fi.com/C0C71PDPA' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
+                    <p>
+                        I will display your name (no matter the amount) on my special "Supporters Hall of Fame" that you can see <strong><a href="{{url_for('hall_of_fame')}}">HERE</a></strong>!
+                        If you prefer to stay anonymous just say so on the donation message though, and I'll respect that :).
+                    </p>
+                  
                 </div>
             </div>
         </div>
@@ -116,4 +119,13 @@
 {% block scripts %}
 {{super()}}
 <script type="text/javascript" src="/static/scripts/html2canvas.min.js"></script>
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+    kofiWidgetOverlay.draw('soniarizzodev', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#323842',
+        'floating-chat.donateButton.text-color': '#fff'
+    });
+</script>
 {% endblock %}
